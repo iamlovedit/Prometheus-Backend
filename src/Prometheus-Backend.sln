@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prometheus-Backend", "Prometheus-Backend.csproj", "{96513D4D-502D-4E14-8244-0128B9DDB0CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prometheus.Backend", "Prometheus.Backend.csproj", "{96513D4D-502D-4E14-8244-0128B9DDB0CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
