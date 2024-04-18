@@ -7,3 +7,9 @@
       dockerfile: Dockerfile
     env_file:
       - .env
+  
+  postgresql:
+    image: postgres:bullseye
+    container_name: prometheus_postgresql
+    env_file:
+      - .env

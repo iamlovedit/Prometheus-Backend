@@ -1,8 +1,9 @@
-﻿using Prometheus.Backend.Infrastructure;
+﻿using Asp.Versioning;
+using Roller.Infrastructure;
 
 namespace Prometheus.Backend.Controllers.V1;
 
-public class IdentityController:CustomControllerBase
+[ApiVersion("1.0")]
+public class IdentityController : RollerControllerBase
 {
-    
 }

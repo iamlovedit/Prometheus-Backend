@@ -1,4 +1,5 @@
-using Prometheus.Backend.Infrastructure;
+using Roller.Infrastructure.SetupExtensions;
+using Roller.Infrastructure.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -6,10 +7,5 @@ var services = builder.Services;
 builder.AddInfrastructureSetup();
 
 var app = builder.Build();
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
-app.Run();
+app.UseInfrastructure();
