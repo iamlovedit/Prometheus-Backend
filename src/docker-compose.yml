@@ -16,7 +16,8 @@
       - .env
     volumes:
       - ./data/prometheus_services/logs:/app/logs
-  
+    ports:
+      - "${PROMETHEUS_PORT}:${ASPNETCORE_HTTP_PORTS}"
   
   postgresql:
     image: postgres:bullseye
@@ -33,6 +34,8 @@
       PGTZ: "GMT+8"
     env_file:
       - .env
+    ports:
+      - "${DB_PORT}:5432"
 
   redis:
     networks:
@@ -45,7 +48,7 @@
     ports:
       - "${REDIS_PORT}:6379"
     command: redis-server --requirepass ${REDIS_PASSWORD}
-    
+  
   seqcli:
     image: datalust/seqcli:latest
     container_name: "prometheus_seqcli"
@@ -55,7 +58,7 @@
     restart: on-failure:5
     networks:
       - "prometheus_services_net"
-    
+  
   seq:
     image: datalust/seq:latest
     container_name: "prometheus_seq"
