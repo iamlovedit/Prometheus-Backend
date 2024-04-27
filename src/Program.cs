@@ -9,7 +9,7 @@ var services = builder.Services;
 services.AddScoped<IDatabaseService, DatabaseService>();
 services.AddScoped<IProductionService, ProductionService>();
 services.AddScoped<IVersionService, VersionService>();
-
+services.AddHttpContextAccessor();
 builder.AddInfrastructureSetup();
 
 var app = builder.Build();

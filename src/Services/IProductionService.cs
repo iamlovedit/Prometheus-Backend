@@ -7,9 +7,5 @@ public interface IProductionService:IServiceBase<Production>
     
 }
 
-public class ProductionService : ServiceBase<Production>, IProductionService
-{
-    public ProductionService(IRepositoryBase<Production> dbContext) : base(dbContext)
-    {
-    }
-}
+public class ProductionService(IRepositoryBase<Production> dbContext)
+    : ServiceBase<Production>(dbContext), IProductionService;

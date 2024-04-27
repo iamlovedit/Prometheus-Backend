@@ -7,9 +7,4 @@ public interface IDatabaseService : IServiceBase<Database>
 {
 }
 
-public class DatabaseService : ServiceBase<Database>, IDatabaseService
-{
-    public DatabaseService(IRepositoryBase<Database> dbContext) : base(dbContext)
-    {
-    }
-}
+public class DatabaseService(IRepositoryBase<Database> dbContext) : ServiceBase<Database>(dbContext), IDatabaseService;

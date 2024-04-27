@@ -7,9 +7,4 @@ public interface IVersionService:IServiceBase<Version>
     
 }
 
-public class VersionService : ServiceBase<Version>, IVersionService
-{
-    public VersionService(IRepositoryBase<Version> dbContext) : base(dbContext)
-    {
-    }
-}
+public class VersionService(IRepositoryBase<Version> dbContext) : ServiceBase<Version>(dbContext), IVersionService;
